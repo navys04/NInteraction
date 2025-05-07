@@ -1,0 +1,23 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "NInteraction",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "navys04",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "NInteraction",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
