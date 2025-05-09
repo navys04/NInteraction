@@ -66,7 +66,7 @@ public:
 	 * Return interactable additional data.
 	 * Usually, it should be visual information, but you can put here anything you want
 	 */
-	UFUNCTION(BlueprintNativeEvent, Category = "Interaction")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Interaction")
 	const UObject* GetInteractableData();
 #pragma endregion VisualMethods
 	
