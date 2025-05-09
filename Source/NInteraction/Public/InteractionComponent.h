@@ -8,6 +8,8 @@
 
 class IInteractionInterface;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNewInteractableFoundDelegate, const AActor*, Interactable);
+
 /**
  * This component should be added to player's character in game. Controls all interaction related logic.
  * Find and interact with this system objects through this component, please ^_^
@@ -60,17 +62,16 @@ public:
 	bool IsInteracting() const;
 #pragma endregion EventMethods
 
+#pragma region Delegates
+	/**
+	 * Calls when this component founds and confirms new interactable
+	 */
+	UPROPERTY(BlueprintAssignable, Category = "Interaction")
+	FOnNewInteractableFoundDelegate OnNewInteractableFoundDelegate;
+#pragma endregion Delegates
+
 protected:
 	virtual void BeginPlay() override;
-
-#pragma region BlueprintMethods
-	/**
-	 * Blueprint version for OnNewInteractableFound,
-	 * will be called when system is found and already focused on new object
-	 */
-	UFUNCTION(BlueprintImplementableEvent, Category = "Interaction", meta = (DisplayName = "OnNewObjectFound"))
-	void K2_OnNewInteractableFound(AActor* Interactable);
-#pragma endregion BlueprintMethods
 
 #pragma region NativeMethods
 	/**

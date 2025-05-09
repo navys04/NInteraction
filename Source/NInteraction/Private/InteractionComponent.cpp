@@ -120,7 +120,10 @@ void UInteractionComponent::InteractionTick()
 
 void UInteractionComponent::OnNewInteractableFound(AActor* Interactable)
 {
-	K2_OnNewInteractableFound(Interactable);
+	if (OnNewInteractableFoundDelegate.IsBound())
+	{
+		OnNewInteractableFoundDelegate.Broadcast(Interactable);
+	}
 }
 
 bool UInteractionComponent::IsInteractableValid() const

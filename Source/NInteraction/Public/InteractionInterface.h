@@ -50,11 +50,24 @@ public:
 #pragma endregion Main Methods
 
 #pragma region VisualMethods
+	/**
+	 * Being called, when interaction component gives focus on this interactable
+	 */
 	UFUNCTION(BlueprintNativeEvent, Category = "Interaction")
 	void OnFocus(AActor* Instigator);
-	
+
+	/**
+	 * Being called, when interaction component loses focus from this interactable
+	 */
 	UFUNCTION(BlueprintNativeEvent, Category = "Interaction")
 	void OnLostFocus();
+
+	/**
+	 * Return interactable additional data.
+	 * Usually, it should be visual information, but you can put here anything you want
+	 */
+	UFUNCTION(BlueprintNativeEvent, Category = "Interaction")
+	const UObject* GetInteractableData();
 #pragma endregion VisualMethods
 	
 #pragma region GetterMethods
